@@ -251,7 +251,7 @@ Future CheckUserConnection() async {
                       )),
               ),
               const Text(
-                        "Purchases",
+                        "x",
                         style: TextStyle(
                             color: Color(0xff003274),
                             // fontSize: MediaQuery.of(context).size.width * 0.040,
