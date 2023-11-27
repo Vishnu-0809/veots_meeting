@@ -1217,19 +1217,19 @@ Navigator.of(context).push(MaterialPageRoute(
 
                   
 
-                  String WarrantyDate= " 0 days ";
+                  // String WarrantyDate= " 0 days ";
                  
                   final sea = SuggestionsDetailsList[index];
-                  if(sea.details["warranty"]!=null)
-                  {
-                    if(((sea.details["warranty"])/30).toInt()==0)
-                    {
-                      WarrantyDate=(((sea.details["warranty"])).toInt()).toString()+ " days ";
-                    }
-                    else{
-                      WarrantyDate=(((sea.details["warranty"])/30).toInt()).toString()+" months ";
-                    }
-                  }
+                  // if(sea.details["warranty"]!=null)
+                  // {
+                  //   if(((sea.details["warranty"])/30).toInt()==0)
+                  //   {
+                  //     WarrantyDate=(((sea.details["warranty"])).toInt()).toString()+ " days ";
+                  //   }
+                  //   else{
+                  //     WarrantyDate=(((sea.details["warranty"])/30).toInt()).toString()+" months ";
+                  //   }
+                  // }
                   String prevDate(){
                   if(index!=0)
                   {
@@ -1471,7 +1471,7 @@ Navigator.of(context).push(MaterialPageRoute(
                                                 fit: BoxFit.fitWidth,
                                                 child: sea.details["warranty"]==null?
                                                 Text(
-                                    "Warranty of" +WarrantyDate+ "applicable",
+                                    "Warranty of" +" 0 days "+ "applicable",
                                     style: TextStyle(
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins Medium",
@@ -1483,7 +1483,7 @@ Navigator.of(context).push(MaterialPageRoute(
                                               0.014,
                                     ),
                                   ):Text(
-                                    "Warranty of" +" "+ WarrantyDate+ "applicable",
+                                    "Warranty of" +" "+sea.details["warranty"].toString() + " days applicable",
                                     style: TextStyle(
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins Medium",

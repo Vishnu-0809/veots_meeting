@@ -1,4 +1,6 @@
 import 'package:Veots/providers/theme_provider.dart';
+import 'package:Veots/screens/IntroSlide1.dart';
+
 import 'package:Veots/screens/Notifications_view.dart';
 import 'package:Veots/screens/bill_comment.dart';
 import 'package:Veots/screens/cash_back.dart';
@@ -9,6 +11,7 @@ import 'package:Veots/widgets/NetworkCheck.dart';
 import 'package:Veots/widgets/background_fetch.dart';
 import 'package:Veots/widgets/dummy3.dart';
 import 'package:Veots/widgets/not_icon.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -105,7 +108,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   void loggedin() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
+    print("dddddddddddddd ");
+    print(preferences.getString("asd")==null);
+    print("ddddddddddddd");
     setState(() {
+      INTRO = preferences.getBool("INTRO");
       ID = preferences.getString("id");
       UDID = preferences.getString("udid");
     });
@@ -165,12 +172,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             title: 'Veots',
             theme: ThemeData(
                textTheme: const TextTheme(
-               headlineMedium: TextStyle(fontSize: 16,  fontFamily: "Poppins Medium", color: Color(0xff002060), 
-               fontWeight: FontWeight.w600,
-               ),
-               headlineSmall: TextStyle(fontSize: 12,color: Color(0xff00b7ff), fontFamily: "Poppins Medium",),
-               bodyMedium: TextStyle(fontSize: 12, fontFamily: 'Poppins Medium', color: Colors.white),
-               bodySmall: TextStyle(fontSize: 10.5,fontFamily: 'Poppins Medium', fontWeight: FontWeight.bold,color: Color(0xff002060),
+               headlineMedium: TextStyle(fontSize: 14,  fontFamily: "Montserrat-SemiBold", color: Color(0xff002060)),
+               headlineSmall: TextStyle(fontSize: 12,color: Color(0xff00b7ff), fontFamily: "Montserrat-SemiBold",),
+               bodyMedium: TextStyle(fontSize: 10.5, fontFamily: 'Mont'),
+               bodySmall: TextStyle(fontSize: 10.5,fontFamily: 'Montserrat', fontWeight: FontWeight.bold,color: Color(0xff002060),
+               
                 )
              ),
               primarySwatch: Colors.blue,
@@ -181,12 +187,13 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             // theme: MyThemes.lightTheme,
             // darkTheme: MyThemes.darkTheme,
             home:
+           INTRO==null?IntroSlider():
              ID == null
                 ? Login(
                     mainLink: widget.link.toString(),
                     location_on: widget.is_on,
                   )
-                : 
+                : (
                   (widget.link == "" || !widget.is_on)
                     ? HomeScreen(
                         first_time: 0,
@@ -202,10 +209,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 // DisplayProdMain(subLink: '25983251281605230614app280400000',)
                 // MyHomePage()
                 // Tracking_history()
-
+                )
+                )
+                ));
                 
-                )
-                )
-                );
   }
 }

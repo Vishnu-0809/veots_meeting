@@ -180,56 +180,57 @@ reupload_bill() async
                   // SizedBox(
                   //   width: MediaQuery.of(context).size.width * 0.45,
                   // ),
-                  Container(
-                      height: MediaQuery.of(context).size.width * 0.08,
-                      width: MediaQuery.of(context).size.width * 0.08,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff002060),
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                      ),
-                      child: Center(
-                        child: FittedBox(
-                            child: IconButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: 
-                                   (context)=>HomeScreen(first_time: 0,
-                                   mainLink: '',location_on: true,)), (route) => false);
-                                },
-                                icon: const Icon(
-                                  Icons.home,
-                                  // size: MediaQuery.of(context).size.width * 0.06,
-                                  color: Colors.white,
-                                ))),
-                      )),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.015,
-                  ),
-                  Not_icon(),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.015,
-                  ),
-                 Container(
-                          height: MediaQuery.of(context).size.width * 0.08,
-                          width: MediaQuery.of(context).size.width * 0.08,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff002060),
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                   Container(
+                              height: MediaQuery.of(context).size.width * 0.07,
+                              width: MediaQuery.of(context).size.width * 0.07,
+                              decoration: const BoxDecoration(
+                                color: Color(0xff002060),
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                              ),
+                              child: Center(
+                                child: FittedBox(
+                                    child: IconButton(
+                                        onPressed: () {
+                                     Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: 
+                                     (context)=>HomeScreen(first_time: 0,
+                                     mainLink: '',location_on: true,)), (route) => false);
+                                         },
+                                        icon: const Icon(
+                                          Icons.home,
+                                          color: Colors.white,
+                                        ))),
+                              )),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.015,
                           ),
-                          child: Center(
-                            child: FittedBox(
-                              child: 
-                              InkWell(
-                             onTap: (){
-                        _scaffoldKey.currentState?.openDrawer();    },
-                               child: Icon(
-                                  Icons.menu,
-                                  size: MediaQuery.of(context).size.width * 0.05,
-                                  color: Colors.white,
-                                ),         
-                            ),
-                            ),
-                          )),
-                  const SizedBox(width: 12,)
+                          Not_icon(),
+                            
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.015,
+                          ),
+                          Container(
+                              height: MediaQuery.of(context).size.width * 0.07,
+                              width: MediaQuery.of(context).size.width * 0.07,
+                              decoration: const BoxDecoration(
+                                color: Color(0xff002060),
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                              ),
+                              child: Center(
+                                child: FittedBox(
+                                  child: 
+                                  InkWell(
+                                 onTap: (){
+                            _scaffoldKey.currentState?.openDrawer();    },
+                                   child: Icon(
+                                      Icons.menu,
+                                      size: MediaQuery.of(context).size.width * 0.05,
+                                      color: Colors.white,
+                                    ),
+                                
+                                      ),
+                                ),
+                              )),
+                          const SizedBox(width: 12,)
                 ],
               ),
             ),
@@ -397,7 +398,7 @@ reupload_bill() async
               ,
             ],
           ),
-          Text(
+           Text(
                     "Warranty left",
                     style: TextStyle(
                         color: Colors.red,
@@ -470,17 +471,6 @@ reupload_bill() async
           errorBuilder: (context, error, stackTrace) =>
               const Center(child: Text('Sorry couldn\'t show the product image')),
                 )),],
-
-                if(snapshot.details["prodName"] != null)...[
-            Text(
-              "${snapshot.details["prodName"]}",
-              style: TextStyle(
-                  fontSize: 
-                  12,
-                  fontFamily: "Poppins Medium",
-                  color: const Color(0xff002060),
-                  ),
-            ),],
           SizedBox(
             height: MediaQuery.of(context).size.height / 80,
           ),
@@ -539,8 +529,8 @@ reupload_bill() async
                                       color: Colors.white,
                                       fontFamily: "Poppins Medium",
                                       fontSize:
-                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                          MediaQuery.of(context).size.width *
+                                              0.023,
                                       ),
                                 ),
                             
@@ -552,7 +542,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),       
                                
@@ -591,7 +581,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),
                                   if(temp!="")    
@@ -602,7 +592,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ), 
                                  if(snapshot.details["shelflife"] != null)    
@@ -613,7 +603,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ), 
                               if(temp2!="")    
@@ -624,7 +614,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ), 
                                 if(snapshot.details["batchNo"] != null)    
@@ -635,7 +625,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),
                               if(snapshot.details["serialNo"] != null)    
@@ -646,7 +636,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),
                                 if(snapshot.details["warranty"] != null )    
@@ -657,7 +647,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),
                         if(snapshot.details["manuLicenseNo"] != null)
@@ -670,7 +660,7 @@ reupload_bill() async
                                         fontFamily: "Poppins Medium",
                                         fontSize:
                                             MediaQuery.of(context).size.width *
-                                                0.026,
+                                                0.023,
                                         ),
                                   ),
                               ),
@@ -703,7 +693,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                               ),
                               // Text('hello ${widget.snapshot.details["additionalImages"][0][0]["url"]}'),
@@ -737,7 +727,7 @@ reupload_bill() async
                                       fontFamily: "Poppins Medium",
                                       fontSize:
                                           MediaQuery.of(context).size.width *
-                                              0.026,
+                                              0.023,
                                       ),
                                 ),
                                 // Text(widget.snapshot.details["addtionalImages"]),
@@ -834,50 +824,90 @@ reupload_bill() async
                                               )),
                             ),
                               Spacer(),
-                              SizedBox(
-                                height:MediaQuery.of(context)
-                                                    .size
-                                                    .height *0.03 ,
-                                width:MediaQuery.of(context)
-                                                    .size
-                                                    .width *0.23 ,
-                                child: ElevatedButton(
-                                style:  ElevatedButton.styleFrom(
-                                primary: Color(0xFFD1DEFF),
-                                shadowColor: Colors.transparent),
-                                onPressed: (){
-                                      // tracking=[];                   
-                                    // if(widget.snapshot.details['tracking']!=null)
-                                    // {
-                                    //   tracking=[]; 
-                                    // tracking= widget.snapshot.details['tracking'];
-                                    // tracking.insert(0, {'manuAddress':widget.snapshot.details['manuAddress']});
-                                    // print("hi");
-                                    // }
-                                    // else
-                                    // {
-                                    //   tracking=[]; 
-                                    // tracking.insert(0, {'manuAddress':widget.snapshot.details['manuAddress']});
-                                    // }
-                                    // print(tracking);
-                                    Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) =>  Tracking_history(tracking: snapshot.details['tracking'], manuAddress:snapshot.details['manuAddress'])),
-                                  );
-                                //  tracking.removeAt(0);
-                                }, 
-                                child: Text('Track',
-                                style: TextStyle(
-                                              fontFamily: "Poppins Medium",
-                                              color: Colors.black,
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.032,
-                                              fontWeight: FontWeight.w600,
-                                              )
-                                              )),
-                              )
+                             (((snapshot.details["isTrackingAvailable"] !=
+                                                              null) &&
+                                                          snapshot.details[
+                                                              "isTrackingAvailable"]) ||
+                                                      (snapshot.details[
+                                                              "isTrackingAvailable"] ==
+                                                          null))
+                                                  ? SizedBox(
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height *
+                                                              0.03,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.23,
+                                                      child: ElevatedButton(
+                                                          style: ElevatedButton.styleFrom(
+                                                              primary: Color(
+                                                                  0xFFD1DEFF),
+                                                              shadowColor: Colors
+                                                                  .transparent),
+                                                          onPressed: () async {
+                                                            print(
+                                                                '-------------------------');
+
+                                                            print(snapshot
+                                                                .details);
+
+                                                            if (snapshot.details[
+                                                                    "isTrackingAvailable"] !=
+                                                                null) {
+                                                              AlbumTracking res = await createAlbumTracking(
+                                                                  snapshot.details[
+                                                                      "batchNo"],
+                                                                  snapshot.details[
+                                                                      "clientId"],
+                                                                  snapshot.details[
+                                                                      "preSaleCode"],
+                                                                  snapshot.details[
+                                                                      "postSaleCode"]);
+                                                              Navigator.push(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder: (context) => Tracking_history(
+                                                                        tracking: res
+                                                                            .trackingDetails,
+                                                                        manuAddress:
+                                                                            snapshot.details['manuAddress'])),
+                                                              );
+                                                            } else {
+                                                              Navigator.push(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder: (context) => Tracking_history(
+                                                                        tracking: snapshot.details['tracking'] !=
+                                                                                null
+                                                                            ? snapshot.details[
+                                                                                'tracking']
+                                                                            : [],
+                                                                        manuAddress:
+                                                                            snapshot.details['manuAddress'])),
+                                                              );
+                                                            }
+                                                          },
+                                                          child: Text('Track',
+                                                              style: TextStyle(
+                                                                fontFamily:
+                                                                    "Poppins Medium",
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize: MediaQuery.of(
+                                                                            context)
+                                                                        .size
+                                                                        .width *
+                                                                    0.032,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ))),
+                                                    )
+                                                  : Container(),
                           ],),
                         )
                           ]) ,
@@ -896,5 +926,3 @@ reupload_bill() async
     );
   }
 }
-
-

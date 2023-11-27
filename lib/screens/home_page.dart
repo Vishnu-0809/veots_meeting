@@ -251,7 +251,7 @@ Future CheckUserConnection() async {
                       )),
               ),
               const Text(
-                        "x",
+                        "Purchases",
                         style: TextStyle(
                             color: Color(0xff003274),
                             // fontSize: MediaQuery.of(context).size.width * 0.040,
@@ -394,10 +394,12 @@ Future CheckUserConnection() async {
     setState(() { 
     ID=preferences.getString("id");
     custId_coupon=preferences.getString("custId_coupon");
+    
     UDID=preferences.getString("udid");
     NAME=preferences.getString('name');
     GENDER=preferences.getString('gender');
     COMNAME=preferences.getString('companyName');
+
     DOB=preferences.getString('dob');
     RegExp reg = RegExp(r'^[0-9]{10}$');
     if (
@@ -454,12 +456,12 @@ Future<Null> _onrefresh()
                           Container(
                             child: Image.asset(
                               'assets/veots_logo_wo_tl.png',
-                                height: MediaQuery.of(context).size.width * 0.075,
-                          width: MediaQuery.of(context).size.width * 0.075,
+                                height: MediaQuery.of(context).size.width * 0.09,
+                          width: MediaQuery.of(context).size.width * 0.09,
                             ),
                           ),
                           Container(
-                            child: Text("Veots",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Montserrat-SemiBold",fontSize:  MediaQuery.of(context).size.width * 0.042, fontStyle: FontStyle.italic, color: Colors.black),),
+                            child: Text("Veots",style: TextStyle(fontWeight: FontWeight.bold,fontFamily: "Montserrat-SemiBold",fontSize:  MediaQuery.of(context).size.width * 0.042, fontStyle: FontStyle.italic,),),
                           ),
                           const Spacer(),
                           Container(
@@ -535,7 +537,7 @@ Future<Null> _onrefresh()
                           TextStyle(
                               color: const Color(0xff002060),
                               fontSize: MediaQuery.of(context).size.width * 0.042,
-                              // fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Poppins Medium" 
                               ),
                         ),
@@ -547,7 +549,7 @@ Future<Null> _onrefresh()
                           TextStyle(
                               color: const Color(0xff002060),
                               fontSize: MediaQuery.of(context).size.width * 0.042,
-                              // fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Poppins Medium"
                               ),
                         ),
@@ -558,7 +560,7 @@ Future<Null> _onrefresh()
                           TextStyle(
                               color: const Color(0xff002060),
                               fontSize: MediaQuery.of(context).size.width * 0.042,
-                              // fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                               fontFamily: "Poppins Medium"
                               ),
                         ),
@@ -600,69 +602,9 @@ Future<Null> _onrefresh()
                         //       fontWeight: FontWeight.bold,
                         //       fontFamily: "Montserrat"),
                         // ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height / 30,
-                        ),
-                        Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.only(left: 0,right: 0),
-              child: CarouselSlider.builder(
-                itemCount:9,
-                options: CarouselOptions(
-                  disableCenter: true,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 2,
-                  height: MediaQuery.of(context).size.width/2.5,
-                  autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 3, milliseconds: 50),
-                  reverse: false,
-                  // aspectRatio: 5.0,
-                ),
-                itemBuilder: (context, i, id) {
-                  String Advertisement="assets/Frame"+(i+1).toString()+".png";
-                  //for onTap to redirect to another screen
-                  return GestureDetector(
-                    child:Column(
-                      children: [
-                       
                         
-                         InkWell(
-                          onTap: (){final Uri web_url = Uri.parse('https://veots.com/');
-                                              launchUrl(web_url);},
-                          child: Container(
-                      decoration: BoxDecoration(
-                          // borderRadius: BorderRadius.circular(35),
-                          // border: Border.all(
-                          //   // color: Colors.white,
-                          //   width: 4,
-                          // )
-                          ),
-                      //ClipRRect for image border radius
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child:FittedBox(
-                          fit: BoxFit.fill,
-                          child:  Container( width: MediaQuery.of(context).size.width,
-                          height:  MediaQuery.of(context).size.height*0.24,
-                            child:Image.asset(
-                                                                Advertisement,
-                                                                
-                                                              ),
-                          ),
-                        )
-                      ),
-                    ),                         )
-                      ],
-                    ),
+                       
 
-                    onTap: () {
-                      var url = imgList[i];
-                      print(url.toString());
-                    },
-                  );
-                },
-              ),
-            ),
                       ],
                     ),
                   ),
@@ -673,8 +615,10 @@ Future<Null> _onrefresh()
       children: [
         CarouselSlider.builder(
           // carouselController: _carouselController,
+          
           itemCount: 9,
           options: CarouselOptions(
+            height: MediaQuery.of(context).size.height * 0.24,
             disableCenter: true,
             enlargeCenterPage: false,
             autoPlay: true,
@@ -721,7 +665,7 @@ Future<Null> _onrefresh()
           },
         ),
         Positioned(
-          bottom: 50.0, // Adjust the position of the dots as needed
+          bottom: 20.0, // Adjust the position of the dots as needed
           left: 0,
           right: 0,
           child: Row(
@@ -1067,7 +1011,8 @@ Future<Null> _onrefresh()
         print(url);
         print("------------------------------");
  final response = await http.get(Uri.parse(url));
-                  //  print(response.json());
+//  print("asd");
+                  //  print(response);
                    final jsonData = json.decode(response.body);
                    print("-----------------------------------------");
                    print("coupons details");
