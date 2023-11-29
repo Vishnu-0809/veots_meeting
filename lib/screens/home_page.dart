@@ -611,7 +611,8 @@ Future<Null> _onrefresh()
                   SizedBox(
                           height: MediaQuery.of(context).size.height / 200,
                         ),
-                      Stack(
+                    
+ Stack(
       children: [
         CarouselSlider.builder(
           // carouselController: _carouselController,
@@ -685,9 +686,6 @@ Future<Null> _onrefresh()
         ),
       ],
     ),
-
-
-
                   Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -1065,7 +1063,7 @@ Future<Null> _onrefresh()
                 child:IconButton(
                 onPressed: () {
                  print("clicked edit");
-              print(DOB);
+              // print(DOB);
                   String? hi;
                   print(hi);
                   print(File(hi.toString())==null);

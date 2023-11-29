@@ -110,12 +110,12 @@ class _SplashState extends State<Splash>with TickerProviderStateMixin  {
         } else {
           return Center(
             child: Container(
-              height: MediaQuery.of(context).size.height* 0.2,
-              width: MediaQuery.of(context).size.width * 0.4,
+              height: MediaQuery.of(context).size.height*0.2,
+              width: MediaQuery.of(context).size.width *0.4,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/Veots.gif',
+                    'assets/Veots2.gif',
                     // <-- BACKGROUND IMAGE
                   ),
                   fit: BoxFit.fill,

@@ -1221,7 +1221,25 @@ Navigator.of(context).push(MaterialPageRoute(
 
                   // String WarrantyDate= " 0 days ";
                  
-                  final sea = SuggestionsDetailsList[index];
+                 final sea = SuggestionsDetailsList[index];
+                  // String WarrantyDate= " 0 days ";
+                     String current_Date=DateTime.now().toString().substring(0,10);
+      print("qqqqqqqqqqqqqqqqqqqqqqqq "+current_Date);
+
+        String Purchase_Date=sea.details["purchaseDate"].toString().substring(0,10);
+        print("qqqqqqqqqqqqqqqqqqqqqqqq "+Purchase_Date);
+
+
+        DateTime endDate = DateTime(int.parse(current_Date.substring(0,4)), int.parse(current_Date.substring(5,7)), int.parse(current_Date.substring(8,10)));
+       
+  DateTime startDate = DateTime(int.parse(Purchase_Date.substring(0,4)), int.parse(Purchase_Date.substring(5,7)), int.parse(Purchase_Date.substring(8,10)));
+       print(startDate);
+
+       Duration difference = endDate.difference(startDate);
+       int numberOfDays = difference.inDays;
+      print(numberOfDays);
+      int Warranty_Left= int.parse(sea.details["warranty"].toString())-numberOfDays;
+     print(Warranty_Left);
                   // if(sea.details["warranty"]!=null)
                   // {
                   //   if(((sea.details["warranty"])/30).toInt()==0)
@@ -1485,7 +1503,7 @@ Navigator.of(context).push(MaterialPageRoute(
                                               0.014,
                                     ),
                                   ):Text(
-                                    "Warranty of" +" "+ sea.details["warranty"].toString() + " days applicable",
+                                    "Warranty of" +" "+ Warranty_Left.toString() + " days applicable",
                                     style: TextStyle(
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins Medium",

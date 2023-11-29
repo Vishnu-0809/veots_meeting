@@ -169,26 +169,7 @@ Future getSearchData() async {
      
 
 
-            String current_Date=DateTime.now().toString().substring(0,10);
-      print("qqqqqqqqqqqqqqqqqqqqqqqq "+current_Date);
-
-        String Purchase_Date=responseData["data"][i]["purchaseDate"].toString().substring(0,10);
-        print("qqqqqqqqqqqqqqqqqqqqqqqq "+Purchase_Date);
-
-
-        DateTime endDate = DateTime(int.parse(current_Date.substring(0,4)), int.parse(current_Date.substring(5,7)), int.parse(current_Date.substring(8,10)));
-       
-  DateTime startDate = DateTime(int.parse(Purchase_Date.substring(0,4)), int.parse(Purchase_Date.substring(5,7)), int.parse(Purchase_Date.substring(8,10)));
-       print(startDate);
-
-       Duration difference = endDate.difference(startDate);
-       int numberOfDays = difference.inDays;
-      print(numberOfDays);
-      int Warranty_Left= int.parse( responseData["data"][i]["warranty"].toString())-numberOfDays;
-     print(Warranty_Left);
-      
- 
-      temp_class.details["warranty"] = Warranty_Left;
+        temp_class.details["warranty"] =responseData["data"][i]["warranty"];
       //  temp_class.details["imageQrOnProd"] = responseData["data"][i]["imageQrOnProd"];
       temp_class.details["mfgdate"] = responseData["data"][i]["mfgdate"];
       temp_class.details["shelflife"] = responseData["data"][i]["shelflife"];
@@ -297,26 +278,7 @@ for (int i = 0; i < responseData["data"].length; i++) {
       //     responseData["batchDetails"]["QROnProd"];
       temp_class.details["expiry"] = responseData["data"][i]["expiry"];
       temp_class.details["batchNo"] = responseData["data"][i]["batchNo"];
-           String current_Date=DateTime.now().toString().substring(0,10);
-      print("qqqqqqqqqqqqqqqqqqqqqqqq "+current_Date);
-
-        String Purchase_Date=responseData["data"][i]["purchaseDate"].toString().substring(0,10);
-        print("qqqqqqqqqqqqqqqqqqqqqqqq "+Purchase_Date);
-
-
-        DateTime endDate = DateTime(int.parse(current_Date.substring(0,4)), int.parse(current_Date.substring(5,7)), int.parse(current_Date.substring(8,10)));
-       
-  DateTime startDate = DateTime(int.parse(Purchase_Date.substring(0,4)), int.parse(Purchase_Date.substring(5,7)), int.parse(Purchase_Date.substring(8,10)));
-       print(startDate);
-
-       Duration difference = endDate.difference(startDate);
-       int numberOfDays = difference.inDays;
-      print(numberOfDays);
-      int Warranty_Left= int.parse( responseData["data"][i]["warranty"].toString())-numberOfDays;
-     print(Warranty_Left);
-      
- 
-      temp_class.details["warranty"] = Warranty_Left;
+        temp_class.details["warranty"] =responseData["data"][i]["warranty"];
       //  temp_class.details["imageQrOnProd"] = responseData["data"][i]["imageQrOnProd"];
       temp_class.details["mfgdate"] = responseData["data"][i]["mfgdate"];
       temp_class.details["shelflife"] = responseData["data"][i]["shelflife"];
@@ -426,26 +388,9 @@ for (int i = 0; i < responseData["data"].length; i++) {
       temp_class.details["expiry"] = responseData["data"][i]["expiry"];
       temp_class.details["batchNo"] = responseData["data"][i]["batchNo"];
 
-       String current_Date=DateTime.now().toString().substring(0,10);
-      print("qqqqqqqqqqqqqqqqqqqqqqqq "+current_Date);
-
-        String Purchase_Date=responseData["data"][i]["purchaseDate"].toString().substring(0,10);
-        print("qqqqqqqqqqqqqqqqqqqqqqqq "+Purchase_Date);
-
-
-        DateTime endDate = DateTime(int.parse(current_Date.substring(0,4)), int.parse(current_Date.substring(5,7)), int.parse(current_Date.substring(8,10)));
-       
-  DateTime startDate = DateTime(int.parse(Purchase_Date.substring(0,4)), int.parse(Purchase_Date.substring(5,7)), int.parse(Purchase_Date.substring(8,10)));
-       print(startDate);
-
-       Duration difference = endDate.difference(startDate);
-       int numberOfDays = difference.inDays;
-      print(numberOfDays);
-      int Warranty_Left= int.parse( responseData["data"][i]["warranty"].toString())-numberOfDays;
-     print(Warranty_Left);
-      
+    
  
-      temp_class.details["warranty"] = Warranty_Left;
+      temp_class.details["warranty"] =responseData["data"][i]["warranty"];
       //  temp_class.details["imageQrOnProd"] = responseData["data"][i]["imageQrOnProd"];
       temp_class.details["mfgdate"] = responseData["data"][i]["mfgdate"];
       temp_class.details["shelflife"] = responseData["data"][i]["shelflife"];
@@ -1577,10 +1522,28 @@ Navigator.of(context).push(MaterialPageRoute(
                 itemBuilder: (context, index) {
 
                   
-
+final sea = SuggestionsDetailsList[index];
                   // String WarrantyDate= " 0 days ";
-                 
-                  final sea = SuggestionsDetailsList[index];
+                     String current_Date=DateTime.now().toString().substring(0,10);
+      print("qqqqqqqqqqqqqqqqqqqqqqqq "+current_Date);
+
+        String Purchase_Date=sea.details["purchaseDate"].toString().substring(0,10);
+        print("qqqqqqqqqqqqqqqqqqqqqqqq "+Purchase_Date);
+
+
+        DateTime endDate = DateTime(int.parse(current_Date.substring(0,4)), int.parse(current_Date.substring(5,7)), int.parse(current_Date.substring(8,10)));
+       
+  DateTime startDate = DateTime(int.parse(Purchase_Date.substring(0,4)), int.parse(Purchase_Date.substring(5,7)), int.parse(Purchase_Date.substring(8,10)));
+       print(startDate);
+
+       Duration difference = endDate.difference(startDate);
+       int numberOfDays = difference.inDays;
+      print(numberOfDays);
+      int Warranty_Left= int.parse(sea.details["warranty"].toString())-numberOfDays;
+     print(Warranty_Left);
+      
+ 
+                  
 
 
                   
@@ -1839,7 +1802,7 @@ Navigator.of(context).push(MaterialPageRoute(
                                               0.014,
                                     ),
                                   ):Text( 
-                                    "Warranty of" +" "+ sea.details["warranty"].toString() + " days applicable",
+                                    "Warranty of" +" "+ Warranty_Left.toString() + " days applicable",
                                     style: TextStyle(
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: "Poppins Medium",
